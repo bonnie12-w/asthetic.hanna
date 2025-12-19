@@ -1,35 +1,46 @@
-import { getPostBySlug, getAllSlugs } from "@/lib/posts"
 import Image from "next/image"
+import { getPostBySlug, getAllSlugs } from "@/lib/posts"
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs()
-  return slugs.map(slug => ({ slug }))
+
+  return slugs.map(slug => ({
+    slug,
+  }))
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const post = await getPostBySlug(params.slug)
 
   return (
-    <article className="pb-24">
+    <article className="pb-sectionDesktop">
       {/* HERO IMAGE */}
-      <div className="w-full h-[70vh] relative">
+      <div className="relative w-full h-[70vh]">
         <Image
           src={post.image}
           alt={post.title}
           fill
-          className="object-cover"
           priority
+          className="object-cover"
         />
       </div>
 
       {/* CONTENT */}
-      <div className="max-w-[820px] mx-auto px-6 mt-20">
-        <h1 className="font-playfair text-5xl mb-6">{post.title}</h1>
-        <p className="text-[#555] mb-16">{post.description}</p>
+      <div className="max-w-[820px] mx-auto px-6 mt-24">
+        <h1 className="font-playfair text-h1 mb-8">
+          {post.title}
+        </h1>
 
-        <div className="prose prose-neutral max-w-none">
-          {post.content}
-        </div>
+        <p className="text-secondary mb-20">
+          {post.description}
+        </p>
+
+        {/* MDX CONTENT */}
+        {post.content}
       </div>
     </article>
   )

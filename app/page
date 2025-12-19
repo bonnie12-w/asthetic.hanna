@@ -1,0 +1,128 @@
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import CategoryCard from "@/components/category-card"
+import PostCard from "@/components/post-card"
+
+export default function HomePage() {
+  // Mock data - replace with your actual data source (MDX, CMS, etc.)
+  const categories = [
+    {
+      title: "Living Room Decor",
+      href: "/blog?category=living-room",
+      imageUrl: "/modern-minimalist-living-room-with-neutral-tones-a.jpg",
+    },
+    {
+      title: "Entryway Styling",
+      href: "/blog?category=entryway",
+      imageUrl: "/elegant-entryway-with-console-table-and-mirror-war.jpg",
+    },
+    {
+      title: "Bathroom Aesthetics",
+      href: "/blog?category=bathroom",
+      imageUrl: "/spa-like-bathroom-with-natural-materials-and-plant.jpg",
+    },
+    {
+      title: "Bedroom Inspiration",
+      href: "/blog?category=bedroom",
+      imageUrl: "/serene-bedroom-with-linen-bedding-and-warm-neutral.jpg",
+    },
+  ]
+
+  const latestPosts = [
+    {
+      title: "Creating a Calm Living Space with Neutral Tones",
+      slug: "calm-living-space-neutral-tones",
+      excerpt:
+        "Discover how to transform your living room into a peaceful sanctuary using a carefully curated neutral palette.",
+      imageUrl: "/calm-neutral-living-room-with-textures.jpg",
+      date: "Dec 15, 2025",
+    },
+    {
+      title: "Essential Elements for a Welcoming Entryway",
+      slug: "welcoming-entryway-essentials",
+      excerpt: "First impressions matter. Learn the key pieces that make your entryway both functional and beautiful.",
+      imageUrl: "/modern-entryway-with-bench-and-hooks.jpg",
+      date: "Dec 12, 2025",
+    },
+    {
+      title: "Spa-Inspired Bathroom Design Ideas",
+      slug: "spa-inspired-bathroom-design",
+      excerpt: "Turn your bathroom into a luxurious retreat with these simple yet impactful design choices.",
+      imageUrl: "/spa-bathroom-with-natural-wood-and-plants.jpg",
+      date: "Dec 8, 2025",
+    },
+    {
+      title: "The Art of Layering Textures in the Bedroom",
+      slug: "layering-textures-bedroom",
+      excerpt: "Create depth and warmth in your bedroom by mastering the art of textile and texture layering.",
+      imageUrl: "/cozy-bedroom-with-layered-linen-and-wool-textures.jpg",
+      date: "Dec 5, 2025",
+    },
+  ]
+
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="bg-secondary py-24 md:py-32 lg:py-40">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h1 className="font-serif text-4xl leading-tight text-foreground text-balance md:text-5xl lg:text-6xl">
+            Warm, Modern Home Decor Ideas for Elevated Living
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            Curated aesthetics for interiors that feel intentional and timeless
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-8 bg-foreground px-8 py-6 text-base text-white hover:bg-accent hover:text-foreground transition-colors"
+          >
+            <Link href="/blog">Explore Decor Ideas</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Featured Categories */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="mb-12 text-center font-serif text-3xl text-foreground md:text-4xl">Browse by Room</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((category) => (
+              <CategoryCard key={category.title} {...category} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Blog Posts */}
+      <section className="bg-secondary py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="mb-12 text-center font-serif text-3xl text-foreground md:text-4xl">Latest Inspiration</h2>
+          <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            {latestPosts.map((post) => (
+              <PostCard key={post.slug} {...post} />
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-foreground text-foreground hover:bg-foreground hover:text-white bg-transparent"
+            >
+              <Link href="/blog">View All Posts</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Statement */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <p className="font-serif text-2xl italic leading-relaxed text-muted-foreground text-balance md:text-3xl">
+            Aesthetic Finds by Anna curates modern home decor ideas designed to inspire calm, warmth, and quiet luxury.
+          </p>
+        </div>
+      </section>
+    </main>
+  )
+}

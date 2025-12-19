@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-primary font-inter text-body;
+}
+
+/* Headings */
+h1, h2, h3 {
+  @apply font-playfair;
+}
+
+/* Section spacing helpers */
+.section {
+  @apply py-sectionMobile md:py-sectionDesktop;
+}
+
+/* MDX / Blog prose */
+.prose {
+  @apply prose-neutral max-w-none;
+}
+
+.prose h2 {
+  @apply font-playfair text-h2 mt-20 mb-6;
+}
+
+.prose p {
+  @apply text-secondary leading-[1.7];
+}
+
+.prose img {
+  @apply my-16;
+}

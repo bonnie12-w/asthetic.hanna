@@ -1,30 +1,33 @@
-"use client";
-
 import Image from "next/image";
 
-type CategoryCardProps = {
+interface CategoryCardProps {
   title: string;
   image: string;
-};
+}
 
-export default function CategoryCard({
-  title,
-  image,
-}: CategoryCardProps) {
+export default function CategoryCard({ title, image }: CategoryCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-sm">
-      <div className="relative aspect-[4/5]">
+    <div className="group relative overflow-hidden rounded-md">
+      {/* Image wrapper */}
+      <div className="relative w-full h-[360px] md:h-[420px]">
         <Image
           src={image}
           alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, 25vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+          priority
         />
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 bg-white/90 px-4 py-3">
-        <h3 className="text-base">{title}</h3>
+      {/* Overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-black/20" />
+
+      {/* Title */}
+      <div className="absolute bottom-6 left-6">
+        <h3 className="font-serif text-2xl text-white leading-tight">
+          {title}
+        </h3>
       </div>
     </div>
   );

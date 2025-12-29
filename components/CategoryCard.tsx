@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 
-interface CategoryCardProps {
+type CategoryCardProps = {
   title: string;
   image: string;
-}
+};
 
 export default function CategoryCard({
   title,
@@ -13,7 +13,7 @@ export default function CategoryCard({
 }: CategoryCardProps) {
   return (
     <div className="group relative overflow-hidden">
-      <div className="aspect-[3/4] relative">
+      <div className="relative aspect-[3/4]">
         <Image
           src={image}
           alt={title}

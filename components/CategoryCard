@@ -1,0 +1,16 @@
+type CategoryCardProps = {
+  title: string;
+  description: string;
+};
+
+export default function CategoryCard({
+  title,
+  description,
+}: CategoryCardProps) {
+  return (
+    <div className="rounded-xl border bg-white p-6 shadow-sm hover:shadow-md transition">
+      <h2 className="text-xl font-semibold mb-2">{title}</h2>
+      <p className="text-gray-600">{description}</p>
+    </div>
+  );
+}

@@ -7,28 +7,20 @@ interface CategoryCardProps {
 
 export default function CategoryCard({ title, image }: CategoryCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-md">
-      {/* Image wrapper */}
-      <div className="relative w-full h-[360px] md:h-[420px]">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-          priority
-        />
-      </div>
+    <div className="relative aspect-[3/4] overflow-hidden rounded-md">
+      <Image
+        src={image}
+        alt={title}
+        fill
+        sizes="(max-width: 768px) 100vw, 25vw"
+        className="object-cover transition-transform duration-500 hover:scale-105"
+      />
 
-      {/* Overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-black/20" />
 
-      {/* Title */}
-      <div className="absolute bottom-6 left-6">
-        <h3 className="font-serif text-2xl text-white leading-tight">
-          {title}
-        </h3>
-      </div>
+      <h3 className="absolute bottom-6 left-6 text-white text-2xl font-serif">
+        {title}
+      </h3>
     </div>
   );
 }

@@ -1,24 +1,43 @@
-import Image from "next/image";
+import Link from "next/link"
+import Image from "next/image"
 
 interface CategoryCardProps {
-  title: string;
-  image: string;
+  title: string
+  href: string
+  imageUrl: string
 }
 
-export default function CategoryCard({ title, image }: CategoryCardProps) {
+export default function CategoryCard({
+  title,
+  href,
+  imageUrl,
+}: CategoryCardProps) {
   return (
-    <div className="relative overflow-hidden rounded-lg">
-      <Image
-        src={image}
-        alt={title}
-        width={600}
-        height={800}
-        className="h-[420px] w-full object-cover transition-transform duration-500 hover:scale-105"
-        priority
-      />
-      <div className="absolute bottom-4 left-4 bg-white/90 px-4 py-2">
-        <h3 className="font-serif text-lg text-[#1C1C1C]">{title}</h3>
+    <Link
+      href={href}
+      className="group relative block overflow-hidden rounded-xl"
+    >
+      {/* Image wrapper controls SIZE */}
+      <div className="relative aspect-[2/3] w-full bg-neutral-100">
+        <Image
+          src={imageUrl}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, 25vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          priority={false}
+        />
+
+        {/* Soft gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+
+        {/* Title */}
+        <div className="absolute bottom-0 left-0 p-5">
+          <h3 className="font-serif text-xl text-white md:text-2xl">
+            {title}
+          </h3>
+        </div>
       </div>
-    </div>
-  );
+    </Link>
+  )
 }

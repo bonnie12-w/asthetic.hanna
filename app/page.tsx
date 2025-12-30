@@ -1,5 +1,5 @@
 import Link from "next/link"
-import CategoryCard from "../components/category-card"
+import CategoryCard from "../components/CategoryCard"
 
 export default function HomePage() {
   const categories = [

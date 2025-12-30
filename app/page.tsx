@@ -4,16 +4,6 @@ import CategoryCard from "../components/CategoryCard"
 export default function HomePage() {
   const categories = [
     {
-      title: "Living Room Decor",
-      href: "/blog",
-      imageUrl: "/living.jpg",
-    },
-    {
-      title: "Entryway Styling",
-      href: "/blog",
-      imageUrl: "/entryway.jpg",
-    },
-    {
       title: "Bathroom Aesthetics",
       href: "/blog",
       imageUrl: "/bathroom.jpg",
@@ -28,9 +18,9 @@ export default function HomePage() {
   return (
     <main>
       {/* HERO */}
-      <section className="bg-neutral-50 py-20 md:py-28">
+      <section className="py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h1 className="font-serif text-4xl leading-tight text-neutral-900 md:text-5xl">
+          <h1 className="font-serif text-4xl md:text-5xl text-neutral-900">
             Warm, Modern Home Decor Ideas for Elevated Living
           </h1>
 
@@ -40,7 +30,7 @@ export default function HomePage() {
 
           <Link
             href="/blog"
-            className="mt-8 inline-block bg-neutral-900 px-7 py-4 text-sm tracking-wide text-white transition hover:bg-neutral-700"
+            className="mt-8 inline-block bg-neutral-900 px-7 py-4 text-sm text-white"
           >
             Explore Decor Ideas
           </Link>
@@ -48,13 +38,13 @@ export default function HomePage() {
       </section>
 
       {/* CATEGORIES */}
-      <section className="py-14 md:py-20">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="mb-10 text-center font-serif text-3xl text-neutral-900">
             Browse by Room
           </h2>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 place-items-center">
+          <div className="grid gap-10 sm:grid-cols-2 place-items-center">
             {categories.map((category) => (
               <CategoryCard key={category.title} {...category} />
             ))}
@@ -62,10 +52,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BRAND STATEMENT */}
+      {/* BRAND */}
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="font-serif text-2xl italic leading-relaxed text-neutral-600">
+          <p className="font-serif text-2xl italic text-neutral-600">
             Aesthetic Finds by Hanna curates modern home decor ideas designed to
             inspire calm, warmth, and quiet luxury.
           </p>

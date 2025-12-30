@@ -15,23 +15,23 @@ export default function CategoryCard({
   return (
     <Link
       href={href}
-      className="group relative block overflow-hidden rounded-xl"
+      className="group block overflow-hidden"
     >
-      {/* Image wrapper controls SIZE */}
-      <div className="relative aspect-[2/3] w-full bg-neutral-100">
+      {/* IMAGE CONTAINER — EXACT PROPORTION */}
+      <div className="relative aspect-[4/5] w-full">
         <Image
           src={imageUrl}
           alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, 25vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           priority={false}
         />
 
-        {/* Soft gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+        {/* SOFT OVERLAY (NOT HEAVY) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent" />
 
-        {/* Title */}
+        {/* TITLE */}
         <div className="absolute bottom-0 left-0 p-5">
           <h3 className="font-serif text-xl text-white md:text-2xl">
             {title}

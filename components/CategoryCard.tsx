@@ -13,29 +13,27 @@ export default function CategoryCard({
   imageUrl,
 }: CategoryCardProps) {
   return (
-    <Link
-      href={href}
-      className="group block overflow-hidden"
-    >
-      {/* IMAGE CONTAINER — EXACT PROPORTION */}
-      <div className="relative aspect-[4/5] w-full">
-        <Image
-          src={imageUrl}
-          alt={title}
-          fill
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-          priority={false}
-        />
+    <Link href={href} className="group block">
+      <div className="mx-auto w-full max-w-[320px]">
+        {/* IMAGE */}
+        <div className="relative aspect-[5/6] overflow-hidden rounded-sm">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            sizes="320px"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          />
 
-        {/* SOFT OVERLAY (NOT HEAVY) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent" />
+          {/* VERY SOFT OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
 
-        {/* TITLE */}
-        <div className="absolute bottom-0 left-0 p-5">
-          <h3 className="font-serif text-xl text-white md:text-2xl">
-            {title}
-          </h3>
+          {/* TITLE */}
+          <div className="absolute bottom-0 left-0 p-4">
+            <h3 className="font-serif text-lg text-white md:text-xl">
+              {title}
+            </h3>
+          </div>
         </div>
       </div>
     </Link>

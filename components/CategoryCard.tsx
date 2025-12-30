@@ -13,24 +13,21 @@ export default function CategoryCard({
   imageUrl,
 }: CategoryCardProps) {
   return (
-    <Link href={href} className="group block">
-      <div className="mx-auto w-full max-w-[320px]">
-        {/* IMAGE */}
-        <div className="relative aspect-[5/6] overflow-hidden rounded-sm">
+    <Link href={href} className="block">
+      <div className="mx-auto max-w-[300px]">
+        <div className="relative aspect-[4/5] overflow-hidden">
           <Image
             src={imageUrl}
             alt={title}
             fill
-            sizes="320px"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            sizes="300px"
+            className="object-cover"
           />
 
-          {/* VERY SOFT OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
-          {/* TITLE */}
           <div className="absolute bottom-0 left-0 p-4">
-            <h3 className="font-serif text-lg text-white md:text-xl">
+            <h3 className="font-serif text-lg text-white">
               {title}
             </h3>
           </div>

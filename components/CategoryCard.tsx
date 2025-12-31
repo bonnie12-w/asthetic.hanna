@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 interface CategoryCardProps {
@@ -13,26 +12,20 @@ export default function CategoryCard({
   imageUrl,
 }: CategoryCardProps) {
   return (
-    <Link href={href} className="block">
-      <div className="mx-auto w-[260px]">
-        <div className="relative">
-          <Image
-            src={imageUrl}
-            alt={title}
-            width={230}
-            height={280} // 4:5 ratio
-            className="rounded-sm object-cover"
-          />
+    <Link href={href} className="group block">
+      <div className="relative h-[420px] overflow-hidden">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
 
-          {/* Dark overlay for readability*/}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-sm" />
+        <div className="absolute inset-0 bg-black/25" />
 
-          {/* Title INSIDE image*/}
-          <div className="absolute bottom-0 left-0 p-8">
-            <h3 className="font-serif text-2xl md:text-3xl text-white leading-tight">
-              {title}
-            </h3>
-          </div>
+        <div className="absolute bottom-8 left-8 right-8">
+          <h3 className="font-serif text-2xl md:text-3xl text-white leading-snug">
+            {title}
+          </h3>
         </div>
       </div>
     </Link>

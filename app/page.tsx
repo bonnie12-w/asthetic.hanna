@@ -38,7 +38,7 @@ export default function HomePage() {
       </section>
 
       {/* CATEGORIES */}
-      <section className="py-20">
+      <section className="py-32">
         <h2 className="mb-12 text-center font-serif text-3xl">
           Browse by Room
         </h2>

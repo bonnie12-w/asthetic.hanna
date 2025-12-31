@@ -36,10 +36,8 @@ export default function HomePage() {
             Curated aesthetics for interiors that feel intentional and timeless
           </p>
             asChild
-            size="lg"
             className="mt-8 bg-foreground px-8 py-6 text-base text-white hover:bg-accent hover:text-foreground transition-colors"
           >
-            <Link href="/blog">Explore Decor Ideas</Link>
         </div>
       </section>
 

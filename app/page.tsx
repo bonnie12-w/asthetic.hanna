@@ -26,27 +26,30 @@ export default function HomePage() {
 
   return (
     <main>
-      {/* HERO */}
-      <section className="py-32 text-center">
-        <div className="mx-auto max-w-4xl px-6">
-          <h1 className="font-serif text-5xl md:text-6xl leading-tight">
-            Warm, Modern Home Decor Ideas
+       {/* Hero Section */}
+      <section className="bg-secondary py-24 md:py-32 lg:py-40">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h1 className="font-serif text-4xl leading-tight text-foreground text-balance md:text-5xl lg:text-6xl">
+            Warm, Modern Home Decor Ideas for Elevated Living
           </h1>
-          <p className="mt-8 text-lg text-muted-foreground">
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             Curated aesthetics for interiors that feel intentional and timeless
           </p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-8 bg-foreground px-8 py-6 text-base text-white hover:bg-accent hover:text-foreground transition-colors"
+          >
+            <Link href="/blog">Explore Decor Ideas</Link>
+          </Button>
         </div>
       </section>
 
-      {/* CATEGORIES */}
-      <section className="py-28">
+       {/* Featured Categories */}
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-16 text-center font-serif text-3xl md:text-4xl">
-            Browse by Room
-          </h2>
-
-          {/* THIS IS WHAT FIXES ROWS → COLUMNS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14">
+          <h2 className="mb-12 text-center font-serif text-3xl text-foreground md:text-4xl">Browse by Room</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
               <CategoryCard key={category.title} {...category} />
             ))}

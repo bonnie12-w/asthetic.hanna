@@ -1,27 +1,54 @@
-import Image from "next/image"
+import CategoryCard from "@/components/CategoryCard"
 
 export default function HomePage() {
+  const categories = [
+    {
+      title: "Living Room Decor",
+      href: "/blog",
+      imageUrl: "/living-room.jpg",
+    },
+    {
+      title: "Entryway Styling",
+      href: "/blog",
+      imageUrl: "/entryway.jpg",
+    },
+    {
+      title: "Bathroom Aesthetics",
+      href: "/blog",
+      imageUrl: "/bathroom.jpg",
+    },
+    {
+      title: "Bedroom Inspiration",
+      href: "/blog",
+      imageUrl: "/bedroom.jpg",
+    },
+  ]
+
   return (
-    <main className="p-10 space-y-10">
-      <h1 className="text-3xl font-bold">Image Render Test</h1>
+    <main>
+      {/* HERO */}
+      <section className="py-24 text-center">
+        <h1 className="font-serif text-5xl text-neutral-900">
+          Warm, Modern Home Decor Ideas for Elevated Living
+        </h1>
 
-      <div className="w-[300px]">
-        <Image
-          src="/bathroom.jpg"
-          alt="Bathroom"
-          width={300}
-          height={375}
-        />
-      </div>
+        <p className="mt-6 text-lg text-neutral-600">
+          Curated aesthetics for interiors that feel intentional and timeless
+        </p>
+      </section>
 
-      <div className="w-[300px]">
-        <Image
-          src="/bedroom.jpg"
-          alt="Bedroom"
-          width={300}
-          height={375}
-        />
-      </div>
+      {/* CATEGORIES */}
+      <section className="py-20">
+        <h2 className="mb-12 text-center font-serif text-3xl">
+          Browse by Room
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-10">
+          {categories.map((c) => (
+            <CategoryCard key={c.title} {...c} />
+          ))}
+        </div>
+      </section>
     </main>
   )
 }

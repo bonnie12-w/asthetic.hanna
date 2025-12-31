@@ -13,17 +13,17 @@ export default function CategoryCard({
 }: CategoryCardProps) {
   return (
     <Link href={href} className="group block">
-      <div className="relative h-[420px] overflow-hidden">
+      <div className="relative h-[420px] overflow-hidden rounded-sm">
         <img
           src={imageUrl}
           alt={title}
-          width={230}
-         height={280}// 4:5 ratio
-          className="rounded-sm object-cover"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
+        {/* dark overlay */}
         <div className="absolute inset-0 bg-black/25" />
 
+        {/* title */}
         <div className="absolute bottom-8 left-8 right-8">
           <h3 className="font-serif text-2xl md:text-3xl text-white leading-snug">
             {title}

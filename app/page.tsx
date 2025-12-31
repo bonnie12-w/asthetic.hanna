@@ -57,12 +57,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BRAND STATEMENT */}
-      <section className="py-32">
+      {/* Brand Statement */}
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="font-serif text-[26px] leading-[1.6] text-neutral-700 md:text-[30px]">
-            Aesthetic Finds by Hanna curates modern home decor ideas designed to
-            inspire calm, warmth, and quiet luxury.
+          <p className="font-serif text-2xl italic leading-relaxed text-muted-foreground text-balance md:text-3xl">
+            Aesthetic Finds by Anna curates modern home decor ideas designed to inspire calm, warmth, and quiet luxury.
           </p>
         </div>
       </section>

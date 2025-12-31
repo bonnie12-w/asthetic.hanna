@@ -5,7 +5,7 @@ export default function HomePage() {
     {
       title: "Living Room Decor",
       href: "/blog",
-      imageUrl: "/living-room.jpg",
+      imageUrl: "/livingroom.jpg",
     },
     {
       title: "Entryway Styling",

@@ -1,5 +1,5 @@
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
 
 interface CategoryCardProps {
   title: string
@@ -13,24 +13,25 @@ export default function CategoryCard({
   imageUrl,
 }: CategoryCardProps) {
   return (
-    <Link href={href} className="block">
-      <div className="mx-auto w-[260px]">
-        <div className="relative">
-          <Image
-            src={imageUrl}
-            alt={title}
-            width={230}
-            height={288} // 4:5 ratio
-            className="rounded-sm object-cover"
-          />
+    <Link href={href} className="group block">
+      <div className="relative aspect-[3/4] overflow-hidden">
+        {/* Image */}
+        <Image
+          src={imageUrl}
+          alt={title}
+          fill
+          priority
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-sm" />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/30" />
 
-          <div className="absolute bottom-4 left-4">
-            <h3 className="font-serif text-lg text-white">
-              {title}
-            </h3>
-          </div>
+        {/* Title INSIDE image */}
+        <div className="absolute bottom-6 left-6 right-6">
+          <h3 className="font-serif text-2xl md:text-3xl text-white leading-tight">
+            {title}
+          </h3>
         </div>
       </div>
     </Link>

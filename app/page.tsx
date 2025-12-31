@@ -43,7 +43,7 @@ export default function HomePage() {
           Browse by Room
         </h2>
 
-        <div className="mx-auto max-w-6xl flex flex-wrap justify-center gap-x-16 gap-y-20">
+        <div className="mx-auto max-w-[1200px] flex flex-wrap justify-center gap-x-20 gap-y-24">
           {categories.map((c) => (
             <CategoryCard key={c.title} {...c} />
           ))}

@@ -17,7 +17,9 @@ export default function CategoryCard({
         <img
           src={imageUrl}
           alt={title}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width={230}
+         height={280}// 4:5 ratio
+          className="rounded-sm object-cover"
         />
 
         <div className="absolute inset-0 bg-black/25" />

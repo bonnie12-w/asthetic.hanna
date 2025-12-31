@@ -4,8 +4,8 @@ export default function HomePage() {
   const categories = [
     {
       title: "Living Room Decor",
-      href: "/blog?category=living-room",
-      imageUrl: "/living-room.jpg",
+      href: "/blog?category=livingroom",
+      imageUrl: "/livingroom.jpg",
     },
     {
       title: "Entryway Styling",

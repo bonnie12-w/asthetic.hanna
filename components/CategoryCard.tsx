@@ -19,14 +19,14 @@ export default function CategoryCard({
           <Image
             src={imageUrl}
             alt={title}
-            width={240}
-            height={300} // 4:5 ratio
+            width={230}
+            height={288} // 4:5 ratio
             className="rounded-sm object-cover"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-sm" />
 
-          <div className="absolute bottom-3 left-3">
+          <div className="absolute bottom-4 left-4">
             <h3 className="font-serif text-lg text-white">
               {title}
             </h3>

@@ -1,4 +1,3 @@
-import Link from "next/link"
 import CategoryCard from "@/components/CategoryCard"
 
 export default function HomePage() {
@@ -6,7 +5,7 @@ export default function HomePage() {
     {
       title: "Living Room Decor",
       href: "/blog?category=living-room",
-      imageUrl: "/livingroom.jpg",
+      imageUrl: "/living-room.jpg",
     },
     {
       title: "Entryway Styling",
@@ -46,7 +45,8 @@ export default function HomePage() {
             Browse by Room
           </h2>
 
-          <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+          {/* THIS IS WHAT FIXES ROWS → COLUMNS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14">
             {categories.map((category) => (
               <CategoryCard key={category.title} {...category} />
             ))}

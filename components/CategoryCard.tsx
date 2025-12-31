@@ -19,8 +19,8 @@ export default function CategoryCard({
           <Image
             src={imageUrl}
             alt={title}
-            width={260}
-            height={325} // 4:5 ratio
+            width={240}
+            height={300} // 4:5 ratio
             className="rounded-sm object-cover"
           />
 

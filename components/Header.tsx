@@ -1,34 +1,38 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-black/5">
-      <div className="container-main h-20 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="text-lg font-medium tracking-tight"
-          style={{ fontFamily: "var(--font-playfair)" }}
-        >
-          Aesthetic Finds by Hanna
-        </Link>
-
-        {/* Navigation */}
-        <nav className="flex items-center gap-8 text-sm text-[#555555]">
+    <header className="sticky top-0 z-50 bg-white">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="flex h-[88px] items-center justify-between">
+          {/* LOGO */}
           <Link
             href="/"
-            className="hover:text-[#1C1C1C] transition-colors"
+            className="font-serif text-[22px] tracking-tight text-neutral-900 hover:text-neutral-700 transition"
           >
-            Home
+            Aesthetic Finds by Hanna
           </Link>
-          <Link
-            href="/blog"
-            className="hover:text-[#1C1C1C] transition-colors"
-          >
-            Blog
-          </Link>
-        </nav>
+
+          {/* NAV */}
+          <nav className="flex items-center gap-12">
+            <Link
+              href="/"
+              className="text-[15px] tracking-wide text-neutral-700 hover:text-neutral-900 transition"
+            >
+              Home
+            </Link>
+            <Link
+              href="/blog"
+              className="text-[15px] tracking-wide text-neutral-700 hover:text-neutral-900 transition"
+            >
+              Blog
+            </Link>
+          </nav>
+        </div>
       </div>
+
+      {/* subtle divider */}
+      <div className="h-px w-full bg-neutral-200/70" />
     </header>
-  );
+  )
 }

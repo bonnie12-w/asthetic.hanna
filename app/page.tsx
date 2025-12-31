@@ -35,13 +35,11 @@ export default function HomePage() {
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             Curated aesthetics for interiors that feel intentional and timeless
           </p>
-          <Button
             asChild
             size="lg"
             className="mt-8 bg-foreground px-8 py-6 text-base text-white hover:bg-accent hover:text-foreground transition-colors"
           >
             <Link href="/blog">Explore Decor Ideas</Link>
-          </Button>
         </div>
       </section>
 

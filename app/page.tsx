@@ -44,18 +44,21 @@ export default function HomePage() {
         </a>
       </section>
 
-      {/* CATEGORIES */}
-      <section className="py-32">
-        <h2 className="mb-20 text-center font-serif text-3xl text-neutral-900">
-          Browse by Room
-        </h2>
+       {/* CATEGORIES */}
+      <section className="py-20">
+  <div className="mx-auto max-w-7xl px-6">
+    <h2 className="mb-14 text-center font-serif text-3xl">
+      Browse by Room
+    </h2>
 
-        <div className="mx-auto max-w-[1200px] flex flex-wrap justify-center gap-x-20 gap-y-24">
-          {categories.map((category) => (
-            <CategoryCard key={category.title} {...category} />
-          ))}
-        </div>
-      </section>
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      {categories.map((category) => (
+        <CategoryCard key={category.title} {...category} />
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Brand Statement */}
       <section className="py-16 md:py-24">
